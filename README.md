@@ -1,0 +1,1 @@
+# Wayscript_news
