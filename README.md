@@ -4,7 +4,7 @@
 
 ```
 
-To deploy script in a online server so that it automatically execute script daily
+To deploy script in an online server so that it automatically execute script daily
 
 ```
 

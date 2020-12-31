@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import telebot # pyTelegramBotAPI library
 
-bot_token = "pasteTokenHere"
+bot_token = "paste token here"
 chat_tag = "@pvxtechnews"
 msg = "join @pvxtechnews for daily tech news!"
 #variables={"lastNews":"Google at Odds With US Over Protective Order for Firms Tied to Lawsuit"}
@@ -113,5 +113,8 @@ List.append("\n\n"+msg)
 text = " ".join(List)
 #print(text)
 
-bot.send_message(chat_tag,text)
-print("\nTECH NEWS POSTED :) !!")
+try:
+        bot.send_message(chat_tag,text)
+        print("\nTECH NEWS POSTED :) !!")
+except:
+        print("chat tag or bot token or text message is incorrect!")
