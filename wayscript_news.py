@@ -39,25 +39,28 @@ lastNews=variables["lastNews"]
 #     return List
 
 def getNews():
-	print("Getting news from inshorts public api!")
-	url = 'https://inshorts.vercel.app/technology'
-	page = requests.get(url)
-	dict = eval(page.text)
+        print("Getting news from inshorts public api!")
+        url = 'https://inshorts.vercel.app/technology'
+        page = requests.get(url)
+        dict = eval(page.text)
 
-	List = []
-	count=0
-	for title in dict["articles"]:
-		count+=1
+        List = []
+        count=0
+        for title in dict["articles"]:
+                heading = title["title"][6:-4]
+                if heading[-1]=='?':
+                        continue
+                count+=1
 
-		if count==15:
-			break
-		#if count==11:
-			#List.append("\n\n🌐 Join @pvxtechnews for daily tech news !")
-		List.append("\n\n🌐")
-		heading = title["title"][6:-4]
-		List.append(heading)
-	
-	return List
+                if count==15:
+                    break
+                #if count==11:
+                    #List.append("\n\n🌐 Join @pvxtechnews for daily tech news !")
+                List.append("\n\n🌐")
+
+                List.append(heading)
+
+        return List
 
 
 def ndtv():
