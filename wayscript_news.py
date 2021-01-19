@@ -2,9 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import telebot # pyTelegramBotAPI library
 
-bot_token = "paste token here"
-chat_tag = "@pvxtechnews"
-msg = "join @pvxtechnews for daily tech news!"
+bot_token = "1350155603:AAHMFnGH2UxzsMIjsm66Gs8moi5BkjM9GuA"
+chat_tag = "@premiumcoursesdrive"
+msg = "𝗝𝗼𝗶𝗻 @premiumcoursesdrive 𝗙𝗼𝗿 𝗗𝗮𝗶𝗹𝘆 𝗧𝗲𝗰𝗵 𝗡𝗲𝘄𝘀..!"
 #variables={"lastNews":"Google at Odds With US Over Protective Order for Firms Tied to Lawsuit"}
 
 lastNews=variables["lastNews"]
@@ -56,7 +56,7 @@ def getNews():
                     break
                 #if count==11:
                     #List.append("\n\n🌐 Join @pvxtechnews for daily tech news !")
-                List.append("\n\n🌐")
+                List.append("\n\n💠")
 
                 List.append(heading)
 
@@ -80,7 +80,7 @@ def ndtv():
 		#if count==11:
 			#List.append("\n\n🌐 Join @pvxtechnews for daily tech news !")
 
-		List.append("\n\n🌐")
+		List.append("\n\n💠")
 		headline=heading.text
 
 		if headline[-23:]==": Price, Specifications": #cropping headings having this text in the end
@@ -105,8 +105,8 @@ def ndtv():
 
 bot = telebot.TeleBot(token=bot_token)
 
-List=ndtv()
-List.insert(0,'☆☆☆☆☆💥 Tech News 💥☆☆☆☆☆')
+List=getNews()
+List.insert(0,'☆☆☆☆💥 𝗧𝗲𝗰𝗵 𝗡𝗲𝘄𝘀 𝗕𝘆 𝗘𝗩𝗜𝗟𝗭𝗢𝗡𝗘  💥☆☆☆☆')
 #print(List)
 variables["lastNews"]=List[2] #saving last news
 print("Last news is "+lastNews)
